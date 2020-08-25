@@ -1,10 +1,12 @@
 import React, { Fragment } from "react";
+import SocketConnection from '../components/SocketConnection';
 
 function index() {
   return (
-    <Fragment>
-      <div> This is where all the cool stuff is going to go</div>
-    </Fragment>
+    <div>
+      <SocketConnection />
+    </div>
+      
   );
 }
 
