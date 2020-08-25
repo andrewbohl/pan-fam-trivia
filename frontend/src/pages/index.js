@@ -1,12 +1,11 @@
 import React, { Fragment } from "react";
-import SocketConnection from '../components/SocketConnection';
+import TriviaLandingPage from "../components/LandingPage";
 
 function index() {
   return (
     <div>
-      <SocketConnection />
+      <TriviaLandingPage />
     </div>
-      
   );
 }
 
