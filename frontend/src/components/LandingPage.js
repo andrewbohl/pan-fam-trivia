@@ -28,31 +28,40 @@ class TriviaLandingPage extends Component {
         <WelcomeText>Welcome to PanFam Trivia!</WelcomeText>
         <WelcomeForm>
           <fieldset>
-            <label htmlFor="name">Display Name</label>
+            <label htmlFor="name">Display Name
             <input
+              className="displayName"
               type="text"
               id="name"
               placeholder="What name do you want to display?"
               value={this.state.name}
               onChange={this.handleChange}
             />
+            </label>
 
-            <label htmlFor="name">Enter a game code</label>
+            <label htmlFor="name">Enter a game code
             <input
+              className="gameCode"
               type="text"
               id="gameCode"
               placeholder="title"
               value={this.state.gameCode}
               onChange={this.handleChange}
             />
-          
-        <div>
-          <button disabled={this.state.gameCode === ""} onClick={this.handleNewGameClick}>Join game room</button>
-          <button onClick={this.handleNewGameClick}>
-            Start your own game!
-          </button>
-        </div>
-        </fieldset>
+            </label>
+
+            <label htmlFor="buttons">
+              <button
+                disabled={this.state.gameCode === ""}
+                onClick={this.handleNewGameClick}
+              >
+                Join game room
+              </button>
+              <button onClick={this.handleNewGameClick}>
+                Start your own game!
+              </button>
+            </label>
+          </fieldset>
         </WelcomeForm>
       </div>
     );

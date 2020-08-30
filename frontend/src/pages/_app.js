@@ -1,15 +1,25 @@
 import React from "react";
 import App from "next/app";
 import Head from "next/head";
-import { ThemeProvider } from "styled-components";
+import styled, { ThemeProvider } from "styled-components";
 
-
-
-const theme = {
+export const theme = {
   colors: {
-    main: "#FCEFED",
+    background: "#3abac5",
+    backgroundLighter: "#75cfd6",
+    backgroundDarker: "#29848c",
+
+    backgroundCompliment: "#c5453a",
+    
   },
+  
 };
+
+const StylePage = styled.div`
+  background: ${theme.colors.background};
+  background-compliment: ${theme.colors.backgroundCompliment};
+  margin: 0rem;
+`;
 
 class MyApp extends App {
   componentDidMount() {
@@ -20,12 +30,14 @@ class MyApp extends App {
     const { Component, pageProps } = this.props;
     const propsToPassToComponent = { ...pageProps };
     return (
-        <ThemeProvider theme={theme}>
+      <ThemeProvider theme={theme}>
+        <StylePage>
           <Head>
             <title>PanFam Trivia</title>
           </Head>
           <Component {...propsToPassToComponent} />
-        </ThemeProvider>
+        </StylePage>
+      </ThemeProvider>
     );
   }
 }
